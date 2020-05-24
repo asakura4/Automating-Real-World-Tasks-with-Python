@@ -7,7 +7,7 @@ from reportlab.lib import colors
 
 def generate(filename, title, additional_info, table_data):
 	styles = getSampleStyleSheet()
-	report = SimpleDocTemplate()
+	report = SimpleDocTemplate(filename)
 	report_title = Paragraph(title, styles["h1"])
 	report_info = Paragraph(additional_info, styles["BodyText"])
 	table_style = [('GRID', (0,0),(-1,-1), 1, colors.black),
