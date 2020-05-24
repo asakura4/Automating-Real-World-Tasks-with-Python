@@ -5,7 +5,7 @@ import mimetypes
 import os.path
 import smptplib
 
-def generate(sender, recipient, subject, body, attachement_path):
+def generate(sender, recipient, subject, body, attachment_path):
 	'''Creates an email with an attachment.'''
 	# Basic Email formatting
 	message = email.message.EmailMessage()
@@ -25,3 +25,8 @@ def generate(sender, recipient, subject, body, attachement_path):
 								subtype=mime_subtype,
 								filename=attachment_filename)
 	return message
+
+def send_email(message):
+	mail_server = smptplib.SMTP('localhost')
+	mail_server.send_message(message)
+	mail_server.quit()
