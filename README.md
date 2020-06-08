@@ -9,3 +9,4 @@ Program Practice in Coursera Course:  Automating Real-World Tasks with Python
 * Module 2
 
 * Module 3
+* Integration Practice
